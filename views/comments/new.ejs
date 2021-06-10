@@ -1,0 +1,25 @@
+<%- include("../partials/header") %> 
+
+<h1 style="text-align: center; margin-top: 20px;">Add New Comment To <%= product.name %> </h1>
+<div style="width: 30%; margin: 25px auto;">
+    
+    <form action="/products/<%= product._id%>/comments " method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Author</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="comment[author]">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Text</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="comment[text]">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<!-- <form action="/campgrounds" method="POST">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="image" placeholder="Image url">
+    <button>Submit</button>
+</form> -->
+
+<%- include("../partials/footer") %> 

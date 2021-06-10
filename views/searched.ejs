@@ -1,0 +1,26 @@
+<%- include("partials/header") %> 
+
+<div class="container">
+    <div>
+        <% for(var i = 0; i< data.length; i++){  %> 
+            <div class="jumbotron apistyle">
+                <h2><%= data[i].Brand %></h2>    
+            <h4>Model: <%= data[i].Model %></h4>                
+            <ul style="list-style-type: none;">
+                <li>Dimensions: <%= data[i].Dimensions %></li>
+                <li>Battery: <%= data[i].Battery %></li>
+                <li>Primary Camera: <%= data[i].Primary_camera %></li>
+                <li>Secondary Camera: <%= data[i].Secondary_camera %></li>
+                <li>Network: <%= data[i].Network %></li>
+                <li>Sim:<%= data[i].SIM %></li>
+                <li>Display:<%= data[i].Display_type %></li>
+                <li>Display Size:<%= data[i].Display_size %></li>
+                <li>RAM: <%= data[i].RAM %></li>
+            </ul> 
+            </div>               
+        <% } %> 
+    </div>
+</div>
+
+
+<%- include("partials/footer") %> 

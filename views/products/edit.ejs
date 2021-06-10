@@ -1,0 +1,29 @@
+<%- include("../partials/header") %> 
+
+<h1 style="text-align: center; margin-top: 20px;">Edit <%= product.name %>  </h1>
+<div style="width: 30%; margin: 25px auto;">
+    
+    <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="product[name]" value="<%= product.name %> ">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image URL</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" name="product[image]"  value="<%= product.image %> ">
+        </div>
+        <div class="form-group">
+          <label for="comment">Description</label>
+          <textarea class="form-control" rows="5" id="description" name="product[description]"  ><%= product.description %></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<!-- <form action="/mobiles" method="POST">
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="image" placeholder="Image url">
+    <button>Submit</button>
+</form> -->
+
+<%- include("../partials/footer") %> 

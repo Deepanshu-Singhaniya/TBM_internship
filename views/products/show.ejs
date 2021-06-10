@@ -1,0 +1,59 @@
+<%- include("../partials/header") %> 
+
+<div class="container">
+    <div class="thumbnail" id="showbox">
+        <div><img class="img-responsive" src="<%= product.image %>" alt="" style="padding-left: 40%; padding-top: 20px;"> </div>
+        <br>
+        <div class="captions-full">
+            <h3><a href="#"><p><%= product.name %> </p></a></h3>
+            <h4>Price: &#8377;<%= product.price %> </h4>
+        </div>
+        <div class="container" style="padding-bottom: 10px;">
+            <p><%= product.description %>  </p>
+        </div>
+        <div class="container" style="padding-bottom: 10px;">
+            <a class="btn btn-success" href="/products/<%= product._id %>/edit ">Edit Product</a>
+            <form style="display: inline; color: white;" action="/products/<%= product._id %>?_method=Delete" method="POST">
+                <button class="btn btn-success" >Delete Product</button>
+            </form>
+            
+        </div>
+        
+        <p></p>
+        
+        
+    </div>
+    <hr>
+    
+    <div class="jumbotron">   
+        
+        <div class="text-left">
+            <h4>Comments:</h4>
+        </div>
+        
+        <hr>
+        
+
+        <div class="text-right">
+            <a class="btn btn-success" href="/products/<%= product._id %>/comments/new ">Add New Comment</a>
+        </div>
+        <p></p>
+        <%  product.comments.forEach(function (comment){ %>
+            <div class="row">
+                <div class="col-md-12">
+                    <strong><%= comment.author %></strong>
+                    <span class="pull-right spa1">10 days ago</span>
+                </div>
+                <div class="col-md-12">
+                    <%= comment.text %> 
+                    <p></p>
+                </div>
+            </div>   
+        <% }); %>
+    </div>
+
+
+    
+</div>
+
+<%- include("../partials/footer") %> 
