@@ -298,11 +298,8 @@ app.use("/",indexroutes);
 
 
 
-let port = process.env.PORT;
-if(port == null || port == ""){
-    port = 3000;
-}
+const port = process.env.PORT || 5000;
 
-// app.listen(3000, function(){
-//     console.log("The Product Portfolio server has started");
-// });
+app.listen(port, function(){
+    console.log("The Product Portfolio server has started");
+});
