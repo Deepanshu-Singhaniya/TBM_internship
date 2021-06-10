@@ -13,11 +13,19 @@
         </div>
         <div class="container" style="padding-bottom: 10px;">
             <a class="btn btn-success" href="/products/<%= product._id %>/edit ">Edit Product</a>
-            <form style="display: inline; color: white;" action="/products/<%= product._id %>?_method=Delete" method="POST">
+            <form style="display: inline; color: white;" action="/products/<%= product._id%>?_method=Delete" method="POST">
                 <button class="btn btn-success" >Delete Product</button>
             </form>
-            
+            <div class="text-right">
+                <form action="/cart" method="POST">
+                        <input style="display: none;"  type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="productid" value="<%=product._id%>">
+         
+                   
+                    <button class="btn btn-success" >Add to cart</button>
+                </form>
+            </div>
         </div>
+        
         
         <p></p>
         

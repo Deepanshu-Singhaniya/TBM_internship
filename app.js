@@ -295,8 +295,27 @@ app.use("/products", productroutes);
 app.use("/products/:id/comments",commentroutes);
 app.use("/",indexroutes);
 
+app.get("/cart", function(req, res){
+    res.render("cart");
+});
+app.get("/cartn", function(req, res){
+    res.render("cartn");
+});
 
-
+//  var final = [];
+app.post("/cart", function(req, res){
+    
+    Product.findById(req.body.productid, function(err, foundPro){
+        if(err){
+            console.log(err);
+        }else{
+            var final = [];
+            final.push(foundPro);
+            res.render("cart", {final:final});
+            // res.redirect("/cart");
+        }
+    })
+});
 
 const port = process.env.PORT || 5000;
 
